@@ -1,6 +1,7 @@
 package com.tiny.lib
 
 import org.objectweb.asm.MethodVisitor
+import org.objectweb.asm.Opcodes
 
 public class ChoiceUtil {
     /**
@@ -22,9 +23,9 @@ public class ChoiceUtil {
                 protected void onMethodEnter() {
                     super.onMethodEnter()
                     // ALOAD 25
-                    methodVisitor.visitVarInsn(ALOAD, 1)
+                    methodVisitor.visitVarInsn(Opcodes.ALOAD, 1)
                     // INVOKESTATIC 184
-                    methodVisitor.visitMethodInsn(INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onClick", "(Landroid/view/View;)V", false)
+                    methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onClick", "(Landroid/view/View;)V", false)
                 }
             }
         } else if (name == "onResume" && superName.equalsIgnoreCase("android/support/v4/app/Fragment")) {
@@ -33,9 +34,9 @@ public class ChoiceUtil {
                 protected void onMethodExit(int opcode) {
                     super.onMethodExit(opcode)
                     // ALOAD
-                    methodVisitor.visitVarInsn(ALOAD, 0)
+                    methodVisitor.visitVarInsn(Opcodes.ALOAD, 0)
                     // INVOKESTATIC 184
-                    methodVisitor.visitMethodInsn(INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onFragmentResume", "(Landroid/support/v4/app/Fragment;)V", false)
+                    methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onFragmentResume", "(Landroid/support/v4/app/Fragment;)V", false)
                 }
             }
         } else if (name == "onResume" && superName.equalsIgnoreCase("android/support/v7/app/AppCompatActivity")) {
@@ -44,9 +45,9 @@ public class ChoiceUtil {
                 protected void onMethodExit(int opcode) {
                     super.onMethodExit(opcode)
                     // ALOAD
-                    methodVisitor.visitVarInsn(ALOAD, 0)
+                    methodVisitor.visitVarInsn(Opcodes.ALOAD, 0)
                     // INVOKESTATIC 184
-                    methodVisitor.visitMethodInsn(INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onActivityResume", "(Landroid/app/Activity;)V", false)
+                    methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onActivityResume", "(Landroid/app/Activity;)V", false)
                 }
             }
         } else if (name == "setUserVisibleHint" && className.contains("Fragment")) {
@@ -55,11 +56,11 @@ public class ChoiceUtil {
                 protected void onMethodExit(int opcode) {
                     super.onMethodExit(opcode)
                     // ALOAD 25
-                    methodVisitor.visitVarInsn(ALOAD, 0)
+                    methodVisitor.visitVarInsn(Opcodes.ALOAD, 0)
                     // ILOAD 21
-                    methodVisitor.visitVarInsn(ILOAD, 1)
+                    methodVisitor.visitVarInsn(Opcodes.ILOAD, 1)
                     // INVOKESTATIC 184
-                    methodVisitor.visitMethodInsn(INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "setFragmentUserVisibleHint", "(Landroid/support/v4/app/Fragment;Z)V", false)
+                    methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "setFragmentUserVisibleHint", "(Landroid/support/v4/app/Fragment;Z)V", false)
                 }
             }
         } else if (name == "onHiddenChanged" && className.contains("Fragment")) {
@@ -68,11 +69,11 @@ public class ChoiceUtil {
                 protected void onMethodExit(int opcode) {
                     super.onMethodExit(opcode)
                     // ALOAD 25
-                    methodVisitor.visitVarInsn(ALOAD, 0)
+                    methodVisitor.visitVarInsn(Opcodes.ALOAD, 0)
                     // ILOAD 21
-                    methodVisitor.visitVarInsn(ILOAD, 1)
+                    methodVisitor.visitVarInsn(Opcodes.ILOAD, 1)
                     // INVOKESTATIC 184
-                    methodVisitor.visitMethodInsn(INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onFragmentHiddenChanged", "(Landroid/support/v4/app/Fragment;Z)V", false)
+                    methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onFragmentHiddenChanged", "(Landroid/support/v4/app/Fragment;Z)V", false)
                 }
             }
         }
