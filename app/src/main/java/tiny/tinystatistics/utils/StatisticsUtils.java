@@ -50,10 +50,13 @@ public class StatisticsUtils {
 
     }
 
-    public static void onClick(View view) {
+    public static void onClick(View view, String className) {
+        Log.i("lpc", "className is " + className);
+        String format = className.substring(0, className.lastIndexOf("$")).replaceAll("/", ".");
+        Log.i("lpc", "format className is " + format);
         String idName = view.getResources().getResourceName(view.getId());
         String id2 = idName.substring(idName.lastIndexOf("/") + 1);
-        if (maps.containsKey(mCurrentFragment + id2) || maps.containsKey(mCurrentActivity + id2)) {
+        if (maps.containsKey(format + id2)) {
             Log.i("lpc", "view click " + view.getResources().getResourceName(view.getId()));
         }
     }

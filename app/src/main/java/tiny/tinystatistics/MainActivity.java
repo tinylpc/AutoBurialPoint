@@ -1,21 +1,23 @@
 package tiny.tinystatistics;
 
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import tiny.tinystatistics.dialog.MainDialog;
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.btn_test).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tv_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MainDialog md = new MainDialog(MainActivity.this);
+                md.show();
             }
         });
 

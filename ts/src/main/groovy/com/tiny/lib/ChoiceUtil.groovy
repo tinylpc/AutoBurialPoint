@@ -24,8 +24,10 @@ public class ChoiceUtil {
                     super.onMethodEnter()
                     // ALOAD 25
                     methodVisitor.visitVarInsn(Opcodes.ALOAD, 1)
+                    //向栈中压入类名称
+                    methodVisitor.visitLdcInsn(className)
                     // INVOKESTATIC 184
-                    methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onClick", "(Landroid/view/View;)V", false)
+                    methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC, "tiny/tinystatistics/utils/StatisticsUtils", "onClick", "(Landroid/view/View;Ljava/lang/String;)V", false)
                 }
             }
         } else if (name == "onResume" && superName.equalsIgnoreCase("android/support/v4/app/Fragment")) {
@@ -108,6 +110,7 @@ public class ChoiceUtil {
      */
     static boolean isMatchingClass(String className, String superName, String[] interfaces) {
         boolean isMeetClassCondition = false
+        System.out.println("className is " + className + " superName is " + superName)
         //剔除掉以android开头的类，即系统类，以避免出现不可预测的bug
         if (className.startsWith('android')) {
             return isMeetClassCondition

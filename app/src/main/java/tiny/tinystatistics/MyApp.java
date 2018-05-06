@@ -24,13 +24,13 @@ public class MyApp extends Application {
         super.onCreate();
         String data = "[\n" +
                 "    {\n" +
-                "        \"interfaceName\": \"HomeFragment\",\n" +
+                "        \"interfaceName\": \"tiny.tinystatistics.HomeFragment\",\n" +
                 "        \"idName\": \"tv_test\",\n" +
                 "        \"event\": \"testFragment\"\n" +
                 "    },\n" +
                 "    {\n" +
                 "        \"interfaceName\": \"tiny.tinystatistics.MainActivity\",\n" +
-                "        \"idName\": \"btn_test\",\n" +
+                "        \"idName\": \"tv_test\",\n" +
                 "        \"event\": \"testActivity\"\n" +
                 "    }\n" +
                 "]";

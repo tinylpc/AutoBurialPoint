@@ -8,8 +8,8 @@
     android:orientation="vertical"
     tools:context="tiny.tinystatistics.MainActivity">
 
-    <Button
-        android:id="@+id/btn_test"
+    <TextView
+        android:id="@+id/tv_test"
         android:layout_width="match_parent"
         android:layout_height="100dp"/>
 
