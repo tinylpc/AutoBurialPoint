@@ -24,8 +24,6 @@ import static android.content.Context.MODE_PRIVATE;
  */
 
 public class StatisticsUtils {
-    public static String mCurrentFragment = "";
-    public static String mCurrentActivity = "";
     public static Map<String, String> maps = new HashMap<>();
 
     static {
@@ -46,7 +44,6 @@ public class StatisticsUtils {
     }
 
     public static void onActivityResume(Activity activity) {
-        mCurrentActivity = activity.getClass().getName();
 
     }
 
@@ -62,19 +59,12 @@ public class StatisticsUtils {
     }
 
     public static void onFragmentResume(Fragment fragment) {
-        mCurrentFragment = fragment.getClass().getName();
     }
 
     public static void setFragmentUserVisibleHint(Fragment fragment) {
-        if (fragment.getUserVisibleHint()) {
-            mCurrentFragment = fragment.getClass().getName();
-        }
     }
 
     public static void onFragmentHiddenChanged(Fragment fragment) {
-        if (!fragment.isHidden()) {
-            mCurrentFragment = fragment.getClass().getName();
-        }
     }
 
 }

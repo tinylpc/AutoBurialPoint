@@ -32,6 +32,11 @@ public class MyApp extends Application {
                 "        \"interfaceName\": \"tiny.tinystatistics.MainActivity\",\n" +
                 "        \"idName\": \"tv_test\",\n" +
                 "        \"event\": \"testActivity\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"interfaceName\": \"tiny.tinystatistics.dialog.MainDialog\",\n" +
+                "        \"idName\": \"tv_dialog_test\",\n" +
+                "        \"event\": \"testActivity\"\n" +
                 "    }\n" +
                 "]";
         SharedPreferences sp = getSharedPreferences("test", MODE_PRIVATE);
